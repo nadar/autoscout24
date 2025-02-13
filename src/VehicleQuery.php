@@ -71,6 +71,16 @@ class VehicleQuery extends Query
     {
         return $this->where(['equipor' => $equipmentId]);
     }
+
+		/**
+		 *
+		 * @param String $language Language code
+		 * @return \Indielab\AutoScout24\VehicleQuery
+		 */
+		public function setLng($lng)
+		{
+			return $this->where(['lng' => $lng]);
+		}
     
     /**
      *
@@ -267,7 +277,7 @@ class VehicleQuery extends Query
      */
     public function findOne($id)
     {
-        $response = $this->getClient()->endpointResponse('vehicles/'.$id);
+        $response = $this->getClient()->endpointResponse( 'vehicles/'.$id, $this->_where );
         
         return (new Vehicle($response));
     }
