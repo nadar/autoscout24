@@ -14,14 +14,14 @@ class Vehicle
     {
         $this->_data = $data;
     }
-    
+
     /**
      * Parser the wired date string from autoscout to unix timestamps.
      *
      * @param string $date String from AutoScout like `/Date(1486132651000+0100)/`
-     * @return integer
+     * @return float|int
      */
-    public static function dateParser($date)
+    public static function dateParser(string $date)
     {
         $match = preg_match('/([0-9]+)/', $date, $result);
         
@@ -194,7 +194,7 @@ class Vehicle
      */
     public function getDateCreated()
     {
-        return self::dateParser($this->_data['DateCreated']);
+        return self::dateParser($this->_data['DateCreated'] ?? "");
     }
     
     /**
@@ -202,7 +202,7 @@ class Vehicle
      */
     public function getDateModified()
     {
-        return self::dateParser($this->_data['DateModified']);
+        return self::dateParser($this->_data['DateModified'] ?? "");
     }
     
     /**
@@ -210,7 +210,7 @@ class Vehicle
      */
     public function getDateOfLastInspection()
     {
-        return self::dateParser($this->_data['DateOfLastInspection']);
+        return self::dateParser($this->_data['DateOfLastInspection'] ?? "");
     }
     
     /**
@@ -218,7 +218,7 @@ class Vehicle
      */
     public function getDateTopListing()
     {
-        return self::dateParser($this->_data['DateTopListing']);
+        return self::dateParser($this->_data['DateTopListing'] ?? "");
     }
     
     public function getDealerPrice()

@@ -3,6 +3,7 @@
 namespace Indielab\AutoScout24;
 
 use Countable;
+use ReturnTypeWillChange;
 
 class VehicleQueryIterator implements \Iterator, Countable
 {
@@ -39,7 +40,7 @@ class VehicleQueryIterator implements \Iterator, Countable
         return new Vehicle(current($this->_data));
     }
 
-    public function key()
+    #[ReturnTypeWillChange] public function key() // Todo: Signature needs to be adjusted from php 8.1 onwards
     {
         return key($this->_data);
     }
