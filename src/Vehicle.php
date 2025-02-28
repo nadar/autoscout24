@@ -641,4 +641,20 @@ class Vehicle
     {
         return $this->_data['LeasingCalculatorUrl'];
     }
+
+	/**
+	 * @return integer i.e. 0.00
+	 */
+	public function getBatteryRentPrice()
+	{
+		return $this->_data['BatteryRentPrice'];
+	}
+
+	/**
+	 * @return integer i.e. 100
+	 */
+	public function getBatteryRange()
+	{
+		return $this->_data['BatteryRange'];
+	}
 }
