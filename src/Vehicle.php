@@ -643,18 +643,18 @@ class Vehicle
     }
 
 	/**
-	 * @return integer i.e. 0.00
+	 * Gets the battery capacity.
 	 */
-	public function getBatteryRentPrice()
+	public function getBatteryCapacity()
 	{
-		return $this->_data['BatteryRentPrice'];
+		return isset($this->_data['BatteryCapacity']) ? $this->_data['BatteryCapacity'] : '' ;
 	}
 
 	/**
-	 * @return integer i.e. 100
+	 * Gets the battery range.
 	 */
 	public function getBatteryRange()
 	{
-		return $this->_data['BatteryRange'];
+		return isset($this->_data['BatteryRange']) ? $this->_data['BatteryRange'] : '';
 	}
 }
