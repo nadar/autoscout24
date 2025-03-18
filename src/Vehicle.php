@@ -641,4 +641,20 @@ class Vehicle
     {
         return $this->_data['LeasingCalculatorUrl'];
     }
+
+	/**
+	 * Gets the battery capacity.
+	 */
+	public function getBatteryCapacity()
+	{
+		return isset($this->_data['BatteryCapacity']) ? $this->_data['BatteryCapacity'] : '' ;
+	}
+
+	/**
+	 * Gets the battery range.
+	 */
+	public function getBatteryRange()
+	{
+		return isset($this->_data['BatteryRange']) ? $this->_data['BatteryRange'] : '';
+	}
 }
