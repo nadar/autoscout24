@@ -335,11 +335,26 @@ class Vehicle
     {
         return $this->_data['Height'];
     }
-            
-    public function getHp()
+
+	/**
+	 * Returns the vehicle power in horsepower
+	 *
+	 * @return float|null
+	 */
+    public function getHp(): ?float
     {
-        return $this->_data['Hp'];
+        return $this->_data['Hp'] ?? null;
     }
+
+	/**
+	 * Returns the vehicle power in kilowatts
+	 *
+	 * @return float|null
+	 */
+	public function getKw(): ?float
+	{
+		return $this->_data['Kw'] ?? null;
+	}
     
     /**
      * Get an array with all images for a specific size.
